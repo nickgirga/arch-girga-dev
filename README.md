@@ -1,5 +1,5 @@
 # arch-girga-dev
-A Dockerfile to build an image of "arch-girga-dev", a Docker image based on archlinux:base-devel.
+A Dockerfile to build an image of "[arch-girga-dev](https://hub.docker.com/r/nickgirga/arch-girga-dev)", a Docker image based on archlinux:base-devel.
 
 # Setup
 Docker's command line interface is actually really simple once you learn the commands and why you use certain options. To set up a "arch-girga-dev" environment using a downloaded Dockerfile, we need to accomplish 4 main things: we need to [build an image](#building-an-image), we need to [tag the image](#tagging-an-image) so we can use it (basically, name it), we need to [create a container](#creating-a-container) (basically, it represents a unique "instance" of the image that we will run, but only the changes between the container and the base image are stored), and we need to be able to [start this container on command](#starting-a-container). Before we do any of this, however, we must [obtain the Dockerfile](#obtaining) that contains the instructions that Docker needs in order to construct our image. It's usually a good idea to see what a Dockerfile does before building an image with it on a machine with sensitive information on it. You can read it in plaintext with any text editor to make sure it isn't going to do anything strange.
