@@ -26,6 +26,8 @@ Optionally, we can throw `-v [host_shared_directory]:[docker_shared_directory]` 
 
 Here's an example of what I personally use: `docker run -it --name=dev -v /home/nick/Projects/_docker/storage:/data arch-girga-dev /usr/bin/zsh`. This will tell Docker to create a container named `dev` with the `arch-girga-dev:latest` image (again, `latest` is assumed) with settings that allow us to interact with its isolated version of zsh in our terminal, while still having access to files and directories stored in the host device's `/home/nick/Projects/_docker/storage` directory. Make sure you adjust this command to suit your system and where your directories are located. When you run it, it will automatically start the container. However, if we want to start it again once it stops, we must start it using a different method. See more in the [Starting a Container](#starting-a-container) section.
 
+Note: if you are using zsh auto-correction on your host machine, it will try to remove the colon in the arguments of the `-v` option (we need the colon). If you are using the `-v` option and zsh is asking you if you want to correct it, press N (no). It will leave the command alone and run it as you entered it.
+
 # Starting a Container
 To start an existing, but stopped container, it's fairly simple. Launch configuration was already set when we ran the `docker run` command, so you only need to specify the container you want to start and the way you want to interact with it. We can easily do this with `docker start -ai [container]`. The `-ai` part essentially means what the `-it` part does in the `docker run` command: we want to interact with it right now in the terminal.
 
